@@ -14,6 +14,7 @@ module.exports = {
     'prettier', // Must be last to override other configs
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.js'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',

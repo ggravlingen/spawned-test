@@ -13,7 +13,7 @@ const NavigationBar = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const handleNavigation = path => {
+  const handleNavigation = (path: string) => {
     navigate(path)
   }
 
