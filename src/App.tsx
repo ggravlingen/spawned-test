@@ -56,29 +56,67 @@ const AppContent = () => {
         },
         typography: {
           fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+          // Headings
           h1: {
+            fontSize: '2rem', // 32px - much smaller than default 6rem
             fontWeight: 600,
             color: isDarkMode ? '#e8eaed' : '#1a1a1a',
           },
           h2: {
+            fontSize: '1.75rem', // 28px - smaller than default 3.75rem
             fontWeight: 600,
             color: isDarkMode ? '#e8eaed' : '#1a1a1a',
           },
           h3: {
+            fontSize: '1.5rem', // 24px - smaller than default 3rem
             fontWeight: 600,
             color: isDarkMode ? '#e8eaed' : '#1a1a1a',
           },
           h4: {
+            fontSize: '1.25rem', // 20px - smaller than default 2.125rem
             fontWeight: 500,
             color: isDarkMode ? '#e8eaed' : '#1a1a1a',
           },
           h5: {
+            fontSize: '1.125rem', // 18px - smaller than default 1.5rem
             fontWeight: 500,
             color: isDarkMode ? '#e8eaed' : '#1a1a1a',
           },
           h6: {
+            fontSize: '1rem', // 16px - same as default 1.25rem but more readable
             fontWeight: 500,
             color: isDarkMode ? '#e8eaed' : '#1a1a1a',
+          },
+          // Body text variants
+          body1: {
+            fontSize: '1rem', // 16px - default body text, good for paragraphs
+            lineHeight: 1.6, // Better readability
+            fontWeight: 400,
+          },
+          body2: {
+            fontSize: '0.875rem', // 14px - smaller body text, good for descriptions
+            lineHeight: 1.5,
+            fontWeight: 400,
+          },
+          subtitle1: {
+            fontSize: '1rem', // 16px - subtitles
+            lineHeight: 1.5,
+            fontWeight: 500,
+          },
+          subtitle2: {
+            fontSize: '0.875rem', // 14px - smaller subtitles
+            lineHeight: 1.4,
+            fontWeight: 500,
+          },
+          caption: {
+            fontSize: '0.75rem', // 12px - small text like metadata
+            lineHeight: 1.4,
+            fontWeight: 400,
+          },
+          button: {
+            fontSize: '0.875rem', // 14px - button text
+            fontWeight: 500,
+            textTransform: 'none', // Don't force uppercase
           },
         },
         components: {

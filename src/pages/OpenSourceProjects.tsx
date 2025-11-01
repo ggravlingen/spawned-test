@@ -1,8 +1,4 @@
-import {
-  GitHub as GitHubIcon,
-  OpenInNew as OpenInNewIcon,
-  Star as StarIcon,
-} from '@mui/icons-material'
+import { GitHub as GitHubIcon, Star as StarIcon } from '@mui/icons-material'
 import {
   Box,
   Button,
@@ -110,28 +106,8 @@ const OpenSourceProjects = () => {
               <Typography variant="body2" color="text.secondary">
                 {p.description}
               </Typography>
-              <Box
-                sx={{
-                  display: 'flex',
-                  gap: 2,
-                  alignItems: 'center',
-                  mt: 2,
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                  <StarIcon fontSize="small" />
-                  <Typography variant="caption">{p.stars}</Typography>
-                </Box>
-              </Box>
             </CardContent>
-            <CardActions
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                mt: 'auto',
-              }}
-            >
+            <CardActions sx={{ mt: 'auto' }}>
               <Button
                 size="small"
                 component="a"
@@ -140,20 +116,18 @@ const OpenSourceProjects = () => {
                 rel="noopener noreferrer"
                 startIcon={<GitHubIcon fontSize="small" />}
                 aria-label={`Open ${p.name} on GitHub`}
+                variant="outlined"
+                sx={{
+                  borderColor: 'primary.main',
+                  color: 'primary.main',
+                  '&:hover': {
+                    backgroundColor: 'primary.main',
+                    color: 'primary.contrastText',
+                  },
+                }}
               >
                 View on GitHub
               </Button>
-              <Link
-                href={`https://github.com/ggravlingen/${p.repo}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                underline="hover"
-                variant="body2"
-                sx={{ display: 'inline-flex', alignItems: 'center' }}
-              >
-                github.com/ggravlingen/{p.repo}
-                <OpenInNewIcon fontSize="small" sx={{ ml: 0.5 }} />
-              </Link>
             </CardActions>
           </Card>
         ))}
