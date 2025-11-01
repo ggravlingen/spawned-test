@@ -26,8 +26,7 @@ jobs:
 
       - name: Enable corepack and prepare Yarn 4
         run: |
-          corepack enable
-          corepack prepare yarn@4.0.0 --activate
+          sudo corepack enable
 
       - name: Install dependencies
         run: yarn install --immutable
