@@ -31,7 +31,6 @@ This is a React application built with Vite, Material-UI, and React Router. It f
 2. `yarn type-check` - Run TypeScript type checking
 3. `yarn lint:fix` - Run ESLint with automatic fixes
 4. `yarn build` - Ensure the application builds successfully
-5. `yarn test` - Run Playwright visual tests to ensure UI hasn't broken
 
 These commands ensure code quality, consistency, and that changes don't break the build or visual appearance. All commands must pass before considering a change complete.
 

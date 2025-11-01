@@ -1,12 +1,5 @@
 import { DarkMode, GitHub, LightMode, LinkedIn } from '@mui/icons-material'
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@mui/material'
+import { AppBar, Box, Button, IconButton, Toolbar } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import { useTheme } from '../hooks/useTheme'
@@ -38,10 +31,7 @@ const NavigationBar = () => {
 
   return (
     <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Website Core
-        </Typography>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Button
             color="inherit"
@@ -61,6 +51,9 @@ const NavigationBar = () => {
           >
             Open Source Projects
           </Button>
+        </Box>
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <IconButton
             color="inherit"
             onClick={toggleTheme}
