@@ -45,6 +45,6 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "(sudo corepack enable) && yarn install",
+  "postCreateCommand": "(sudo corepack enable) && yarn install && .devcontainer/setup-git-shortcuts.sh",
   "remoteUser": "node"
 }
