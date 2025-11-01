@@ -25,7 +25,7 @@ This is a React application built with Vite, Material-UI, and React Router. It f
 
 1. `yarn format` - Format code with Prettier
 2. `yarn type-check` - Run TypeScript type checking
-3. `yarn lint` - Run ESLint to check code quality
+3. `yarn lint:fix` - Run ESLint with automatic fixes
 4. `yarn build` - Ensure the application builds successfully
 
 These commands ensure code quality, consistency, and that changes don't break the build. All commands must pass before considering a change complete.
@@ -36,6 +36,7 @@ These commands ensure code quality, consistency, and that changes don't break th
 - Path aliases are configured: `@/` for `src/`, `@pages/` for `src/pages/`, `@components/` for `src/components/`
 - Follow Material-UI best practices for component development
 - Use React functional components with hooks
+- File types: Do not create plain TypeScript `.ts` files for React components — use `.tsx` for any TypeScript React components. Other `.ts` files (non-React utilities) are allowed only when necessary and approved.
 
 ### Project Structure
 
