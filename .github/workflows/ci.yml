@@ -54,7 +54,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}-${{ env.CACHE_VERSION }}
           restore-keys: |
-            ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+            ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}-${{ env.CACHE_VERSION }}
 
       - name: Install Playwright browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
