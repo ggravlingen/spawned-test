@@ -45,6 +45,6 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "(sudo corepack enable || corepack enable) && (sudo corepack prepare yarn@4.0.0 --activate || corepack prepare yarn@4.0.0 --activate) && yarn install",
+  "postCreateCommand": "(sudo corepack enable) && yarn install",
   "remoteUser": "node"
 }
