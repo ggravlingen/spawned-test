@@ -16,6 +16,10 @@ This is a React application built with Vite, Material-UI, and React Router. It f
 - `yarn lint:fix` - Run ESLint with automatic fixes
 - `yarn format:check` - Check if code is properly formatted
 - `yarn preview` - Preview the production build
+- `yarn test` - Run Playwright visual tests
+- `yarn test:ui` - Run Playwright tests with UI mode
+- `yarn test:update` - Update Playwright snapshots for failing tests
+- `yarn test:update-all` - Update all Playwright snapshots for all browsers
 
 ## Development Guidelines
 
@@ -27,8 +31,9 @@ This is a React application built with Vite, Material-UI, and React Router. It f
 2. `yarn type-check` - Run TypeScript type checking
 3. `yarn lint:fix` - Run ESLint with automatic fixes
 4. `yarn build` - Ensure the application builds successfully
+5. `yarn test` - Run Playwright visual tests to ensure UI hasn't broken
 
-These commands ensure code quality, consistency, and that changes don't break the build. All commands must pass before considering a change complete.
+These commands ensure code quality, consistency, and that changes don't break the build or visual appearance. All commands must pass before considering a change complete.
 
 ### Code Style
 
@@ -56,6 +61,18 @@ src/
 - **React Router** - Client-side routing
 - **Vite** - Build tool and dev server
 - **ESLint + Prettier** - Code quality tools
+- **Playwright** - Visual testing framework
+
+### Testing
+
+The project uses Playwright for visual regression testing with snapshot comparisons. Tests are configured for:
+
+- **Browsers**: Chrome (Chromium) and Safari (WebKit)
+- **Viewports**: Desktop and mobile for each browser
+- **Test Types**: Visual snapshots for both light and dark themes
+- **CI Integration**: Tests run automatically on pull requests
+
+**Important**: When making UI changes, update snapshots using `yarn test:update` or `yarn test:update-all` to regenerate reference images.
 
 ### Notes
 
