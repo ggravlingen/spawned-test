@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .yarn
+
+# Playwright
+playwright-report
+test-results/*.json
