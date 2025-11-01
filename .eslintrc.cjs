@@ -66,7 +66,7 @@ module.exports = {
     'import/no-unresolved': [
       'error',
       {
-        ignore: ['/.*', '@vitejs/.*'], // Ignore Vite public assets and plugins
+        ignore: ['/.*', '@vitejs/.*', 'react-router-dom', '@/.*'], // Ignore Vite public assets, plugins, react-router-dom, and @ aliases
       },
     ],
 

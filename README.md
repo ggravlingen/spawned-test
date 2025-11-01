@@ -1,6 +1,20 @@
 # Website Core
 
-A React application built with Vite for fast development and building.
+A React application built with Vite, Material-UI, and React Router for fast development and modern UI components.
+
+## Features
+
+- **Material-UI**: Modern React UI framework with consistent design system
+- **React Router**: Client-side routing for single-page application navigation
+- **Navigation Bar**: Clean navigation with LinkedIn integration
+- **Path Aliases**: Organized imports using `@/` aliases
+- **Responsive Design**: Mobile-friendly Material-UI components
+
+## Navigation Structure
+
+- **Home**: Landing page with welcome message
+- **Open Source Projects**: Dedicated page for showcasing projects
+- **LinkedIn**: External link with icon to LinkedIn profile
 
 ## Development
 
@@ -94,14 +108,37 @@ The devcontainer includes:
 ### Project Structure
 
 ```
-├── public/          # Static assets
-├── src/             # Source code
-│   ├── assets/      # Assets like images, fonts
-│   ├── App.jsx      # Main App component
-│   ├── App.css      # App styles
-│   ├── main.jsx     # Entry point
-│   └── index.css    # Global styles
-├── index.html       # HTML template
-├── vite.config.js   # Vite configuration
-└── package.json     # Dependencies and scripts
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   ├── NavigationBar.jsx
+│   │   └── index.js     # Component exports
+│   ├── pages/           # Application pages
+│   │   ├── Home.jsx
+│   │   ├── OpenSourceProjects.jsx
+│   │   └── index.js     # Page exports
+│   ├── App.jsx          # Main App component with routing
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Global styles
+├── index.html           # HTML template
+├── vite.config.js       # Vite configuration with path aliases
+└── package.json         # Dependencies and scripts
+```
+
+### Path Aliases
+
+The project uses path aliases for cleaner imports:
+
+- `@/` - Points to `src/`
+- `@pages/` - Points to `src/pages/`
+- `@components/` - Points to `src/components/`
+
+Example:
+
+```javascript
+// Instead of
+import NavigationBar from '../../../components/NavigationBar'
+
+// Use
+import { NavigationBar } from '@/components'
 ```
