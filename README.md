@@ -33,6 +33,18 @@ This project is set up with a VS Code devcontainer for consistent development en
    npm run dev
    ```
 
+#### Using Yarn 4 (recommended)
+
+This repository targets Yarn 4. To use Yarn 4 locally we recommend using Corepack (bundled with modern Node.js). Run the following to enable Yarn 4:
+
+```bash
+corepack enable
+corepack prepare yarn@4.0.0 --activate
+# Use yarn normally after this (e.g. yarn install, yarn dev)
+```
+
+If you prefer to pin a specific Yarn 4 release in the repository, add the release file under `.yarn/releases/` and set `yarnPath` in `.yarnrc.yml`.
+
 ### Available Scripts
 
 - `yarn dev` - Start development server on port 5173

@@ -20,10 +20,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+
+      - name: Enable corepack and prepare Yarn 4
+        run: |
+          corepack enable
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Check code formatting
         run: yarn format:check
