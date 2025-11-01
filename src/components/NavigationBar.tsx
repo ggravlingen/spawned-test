@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from '@mui/icons-material'
+import { DarkMode, GitHub, LightMode, LinkedIn } from '@mui/icons-material'
 import {
   AppBar,
   Box,
@@ -9,9 +9,12 @@ import {
 } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
 
+import { useTheme } from '../hooks/useTheme'
+
 const NavigationBar = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  const { isDarkMode, toggleTheme } = useTheme()
 
   const handleNavigation = (path: string) => {
     navigate(path)
@@ -58,6 +61,14 @@ const NavigationBar = () => {
           >
             Open Source Projects
           </Button>
+          <IconButton
+            color="inherit"
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+            title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDarkMode ? <LightMode /> : <DarkMode />}
+          </IconButton>
           <IconButton
             color="inherit"
             onClick={handleGitHubClick}

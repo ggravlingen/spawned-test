@@ -1,24 +1,38 @@
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import {
+  CssBaseline,
+  ThemeProvider as MuiThemeProvider,
+  createTheme,
+} from '@mui/material'
+import { useMemo } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+
+import { ThemeProvider } from './contexts/ThemeContext'
+import { useTheme } from './hooks/useTheme'
 
 import { NavigationBar } from '@/components'
 import { Home, OpenSourceProjects } from '@/pages'
 
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-})
+const AppContent = () => {
+  const { isDarkMode } = useTheme()
 
-function App() {
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: isDarkMode ? 'dark' : 'light',
+          primary: {
+            main: '#1976d2',
+          },
+          secondary: {
+            main: '#dc004e',
+          },
+        },
+      }),
+    [isDarkMode]
+  )
+
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
         <NavigationBar />
@@ -30,6 +44,14 @@ function App() {
           />
         </Routes>
       </Router>
+    </MuiThemeProvider>
+  )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
     </ThemeProvider>
   )
 }
