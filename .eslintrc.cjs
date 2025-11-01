@@ -14,6 +14,7 @@ module.exports = {
     'prettier', // Must be last to override other configs
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.js'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -66,7 +67,7 @@ module.exports = {
     'import/no-unresolved': [
       'error',
       {
-        ignore: ['/.*', '@vitejs/.*'], // Ignore Vite public assets and plugins
+        ignore: ['/.*', '@vitejs/.*', 'react-router-dom', '@/.*'], // Ignore Vite public assets, plugins, react-router-dom, and @ aliases
       },
     ],
 
